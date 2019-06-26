@@ -1,0 +1,29 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.9~svn20110310	//
+CC	Makefile	/^CC = g++ # C compiler$/;"	m
+CONFIGFILEH	configfile.h	2;"	d
+INCPATH	Makefile	/^INCPATH = -I.\/$/;"	m
+IniReadValue	configfile.c	/^void IniReadValue(char* section, char* key, char* val, const char* file)$/;"	f
+IniWriteValue	configfile.c	/^void IniWriteValue(const char* section, char* key, char* val, const char* file)$/;"	f
+LINE_CONTENT_MAX_LEN	configfile.h	9;"	d
+OBJS	Makefile	/^OBJS = $(SRCS:.c=.o) $/;"	m
+READ_STR_ERR	configfile.h	5;"	d
+READ_STR_OK	configfile.h	4;"	d
+RM	Makefile	/^RM = rm -f  # rm command$/;"	m
+SECTION_MAX_LEN	configfile.h	7;"	d
+SRCS	Makefile	/^SRCS = test.c configfile.c$/;"	m
+STRVALUE_MAX_LEN	configfile.h	8;"	d
+TARGET	Makefile	/^TARGET = testdemo$/;"	m
+_PARAM_GLOBALS_	configfile.c	1;"	d	file:
+main	test.c	/^int main(int argc, char **argv)$/;"	f
+readIntValue	configfile.c	/^int readIntValue(const char* section, char* key, const char* file)$/;"	f
+readStringValue	configfile.c	/^int readStringValue(const char* section, char* key, char* val, const char* file)$/;"	f
+strtrim	configfile.c	/^char *strtrim(char *pstr)$/;"	f
+strtriml	configfile.c	/^char *strtriml(char *pstr)$/;"	f
+strtrimr	configfile.c	/^char *strtrimr(char *pstr)$/;"	f
+writeIntValue	configfile.c	/^int writeIntValue(const char* section, char* key, int val, const char* file)$/;"	f
+writeStringVlaue	configfile.c	/^int writeStringVlaue(const char* section, char* key, char* val, const char* file)$/;"	f
