@@ -17,7 +17,45 @@
 //#define LINE_CONTENT_MAX_LEN 256
 
 
+/*将大写字母转换成小写字母*/
+int changetolower(int c)
+{
+    if (c >= 'A' && c <= 'Z')
+    {
+        return c + 'a' - 'A';
+}
+    else
+    {
+        return c;
+    }
+}
 
+//将十六进制的字符串转换成整数  
+long Fixed_key(char s[])
+{
+    int i;
+    int n = 0;
+    if (s[0] == '0' && (s[1] == 'x' || s[1] == 'X'))
+    {
+        i = 2;
+    }
+    else
+    {
+        i = 0;
+    }
+    for (; (s[i] >= '0' && s[i] <= '9') || (s[i] >= 'a' && s[i] <= 'z') || (s[i] >= 'A' && s[i] <= 'Z'); ++i)
+    {
+        if (changetolower(s[i]) > '9')
+        {
+            n = 16 * n + (10 + changetolower(s[i]) - 'a');
+        }
+        else
+        {
+            n = 16 * n + (changetolower(s[i]) - '0');
+        }
+    }
+    return n;
+}
 /*
  *去除字符串右端空格
  */
@@ -55,7 +93,7 @@ char *strtrim(char *pstr)
 
 //read value from .ini
 void IniReadValue(char* section, char* key, char* val, const char* file)
-{
+{//printf("==========int IniReadValue function==========\n");
     FILE* fp;
     int i = 0;
     int lineContentLen = 0;
@@ -104,11 +142,15 @@ void IniReadValue(char* section, char* key, char* val, const char* file)
                     if(i >= lineContentLen) break;
                     strncpy(val, lineContent + position, strlen(lineContent + position));
                     lineContentLen = strlen(val);
+					//printf("bf for=============the len of the val(%s) get from the line of inifile(%s) is %d\n",val,lineContent,lineContentLen);
                     for(i = 0; i < lineContentLen; i++)
                     {
-                        if((lineContent[i] == '\0') || (lineContent[i] == '\r') || (lineContent[i] == '\n'))
+                    	//if((lineContent[i] == '\0') || (lineContent[i] == '\r') || (lineContent[i] == '\n')|| (lineContent[i] == ' ')|| (lineContent[i] == '#'))
+                        if((val[i] == '\0') || (val[i] == '\r') || (val[i] == '\n')|| (val[i] == ' ')|| (val[i] == '#'))
                         {
-                            val[i] = '\0';
+                        	//printf("bf=============the len of the val(%s) get from the line of inifile is %d\n",val,lineContentLen);
+                            val[i] = 0;//val[i] = '\0'; 
+                            //printf("af=============the len of the val(%s) get from the line of inifile is %d\n",val,(i+1));
                             break;
                         }
                     }  

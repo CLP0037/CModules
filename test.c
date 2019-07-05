@@ -25,7 +25,8 @@ typedef struct INGooseConfig{
 }INGooseConfig;
 */
 
-/*将大写字母转换成小写字母*/
+/*
+//将大写字母转换成小写字母
 int tolower(int c)
 {
     if (c >= 'A' && c <= 'Z')
@@ -64,7 +65,7 @@ long Fixed_key(char s[])
     }
     return n;
 }
-
+*/
 
 
 
